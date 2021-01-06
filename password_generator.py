@@ -12,9 +12,10 @@ sleep(1.5)
 while True:
     escolha = str(input('Deseja um código Personalizado ou Aleatório? [P/A] '))
     while escolha not in 'PpAa':
-            print('Por favor escreva sua escolha da mesma forma como foi apresentado.')
-            escolha = str(input('Deseja um código Personalizado ou Aleatório? [P/A] '))
-            sleep(0.5)
+        sleep(0.5)
+        print('Por favor escreva sua escolha da mesma forma como foi apresentado.')
+        escolha = str(input('Deseja um código Personalizado ou Aleatório? [P/A] '))
+            
     sleep(1)
     if escolha in 'Pp':
         password = input('Digite sua Senha: ')
@@ -27,7 +28,7 @@ while True:
     else:
         b=list()
         numbers = ['0','1','2','3','4','5','6','7','8','9']
-        simbols = ['@','#','$','&','*','(',')','-','_','+','=','^','~',':']
+        simbols = ['@','#','$','&','*','(',')','-','_','+','=','^','~',':','.']
         letters = ['a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z']
         LETTERS = ['A','B','C','D','E','F','G','H','I','J','K','L','M','N','O','P','Q','R','S','T','U','V','W','X','Y','Z']
         print('Responda com [S] ou [N], por favor.')
@@ -54,7 +55,6 @@ while True:
         while li not in 'SsNn':
             print('Não entendi, digite novamente por favor!')
             li = str(input('A senha incluirá letras minúsculas? [S/N] '))
-
         sleep(0.5)
         if li in 'Ss':
             z += 1
@@ -63,155 +63,134 @@ while True:
         while la not in 'SsNn':
             print('Não entendi, digite novamente por favor!')
             la = str(input('A senha incluirá letras maiúsculas? [S/N] '))
-
         sleep(0.5)
         if la in 'Ss':
             z += 1
 
         #SE DESEJA CARACTERE REPETIDO
+        q = int(input('Quantos dígitos a senha deve conter? '))
+        while True:
+            if z > q:
+                print('Impossível ter mais tipos de caracteres na senha do que tamanho')
+                sleep(1)
+                while True:
+                    novamente = str(input('Deseja escolher novamente o tamanho de sua senha? [S/N] '))
+                    while novamente not in 'SsNn':
+                        print('Não entendi, digite novamente por favor!')
+                        sleep(0.5)
+                        novamente = str(input('Deseja escolher novamente o tamanho de sua senha? [S/N] '))
+                    if novamente in 'Nn':
+                        sys.exit()
+                    else:
+                        q = int(input('Quantos dígitos a senha deve conter? '))
+                        break            
+            else: 
+                break
 
         if n in 'Ss':
             if s in 'Ss':
                 if li in 'Ss':
                     if la in 'Ss':
                         b = numbers + simbols + letters + LETTERS
-                        q = int(input('Quantos dígitos a senha deve conter? '))
-                        if z > q:
-                            print('Impossível ter mais tipos de caracteres na senha do que tamanho')
-                            sleep(1)
-                            sys.exit()
-                        password=sample(b,q)
-                        
-                        
-                                
-                        
-                            #problema de não ter todos os caracteres desejados e com isso deve ser refeita a senha pelo programa
-
-
-
+                        while True:
+                            password=sample(b,q)
+                            if numbers in password and simbols in password and letters in password and LETTERS in password:
+                                break
                     else:
                         b = numbers + simbols + letters
-                        q = int(input('Quantos dígitos a senha deve conter? '))
-                        if z > q:
-                            print('Impossível ter mais tipos de caracteres na senha do que tamanho')
-                            sleep(1)
-                            sys.exit()
-                        password=sample(b,q)
+                        while True:
+                            password=sample(b,q)
+                            if numbers in password and simbols in password and letters in password:
+                                break
                 else:
                     if la in 'Ss':
                         b = numbers + simbols + LETTERS
-                        q = int(input('Quantos dígitos a senha deve conter? '))
-                        if z > q:
-                            print('Impossível ter mais tipos de caracteres na senha do que tamanho')
-                            sleep(1)
-                            sys.exit()
-                        password=sample(b,q)
+                        while True:
+                            password=sample(b,q)
+                            if numbers in password and simbols in password and LETTERS in password:
+                                break
                     else:
-                        b = numbers + simbols
-                        q = int(input('Quantos dígitos a senha deve conter? '))
-                        if z > q:
-                            print('Impossível ter mais tipos de caracteres na senha do que tamanho')
-                            sleep(1)
-                            sys.exit()
-                        password=sample(b,q)
+                        b = numbers + simbols  
+                        while True:
+                            password=sample(b,q)
+                            if numbers in password and simbols in password:
+                                break
             else:
                 if li in 'Ss':
                     if la in 'Ss':
                         b = numbers + letters + LETTERS
-                        q = int(input('Quantos dígitos a senha deve conter? '))
-                        if z > q:
-                            print('Impossível ter mais tipos de caracteres na senha do que tamanho')
-                            sleep(1)
-                            sys.exit()
-                        password=sample(b,q)
+                        while True:
+                            password=sample(b,q)
+                            if numbers in password and letters in password and LETTERS in password:
+                                break
                     else:
                         b = numbers + letters
-                        q = int(input('Quantos dígitos a senha deve conter? '))
-                        if z > q:
-                            print('Impossível ter mais tipos de caracteres na senha do que tamanho')
-                            sleep(1)
-                            sys.exit()
-                        password=sample(b,q)
+                        while True:
+                            password=sample(b,q)
+                            if numbers in password and letters in password:
+                                break
                 else:
                     if la in 'Ss':
                         b = numbers + LETTERS
-                        q = int(input('Quantos dígitos a senha deve conter? '))
-                        if z > q:
-                            print('Impossível ter mais tipos de caracteres na senha do que tamanho')
-                            sleep(1)
-                            sys.exit()
-                        password=sample(b,q)
+                        while True:
+                            password=sample(b,q)
+                            if numbers in password and LETTERS in password:
+                                break
                     else:
-                        b = numbers
-                        q = int(input('Quantos dígitos a senha deve conter? '))
-                        if z > q:
-                            print('Impossível ter mais tipos de caracteres na senha do que tamanho')
-                            sleep(1)
-                            sys.exit()
-                        password=sample(b,q) 
+                        b = numbers 
+                        while True:
+                            password=sample(b,q)
+                            if numbers in password:
+                                break
         elif n in 'Nn':
             if s in 'Ss':
                 if li in 'Ss':
                     if la in 'Ss':
                         b = simbols + letters + LETTERS
-                        q = int(input('Quantos dígitos a senha deve conter? '))
-                        if z > q:
-                            print('Impossível ter mais tipos de caracteres na senha do que tamanho')
-                            sleep(1)
-                            sys.exit()
-                        password=sample(b,q)
+                        while True:
+                            password=sample(b,q)
+                            if simbols in password and letters in password and LETTERS in password:
+                                break
                     else:
                         b = simbols + letters
-                        q = int(input('Quantos dígitos a senha deve conter? '))
-                        if z > q:
-                            print('Impossível ter mais tipos de caracteres na senha do que tamanho')
-                            sleep(1)
-                            sys.exit()
-                        password=sample(b,q)
+                        while True:
+                            password=sample(b,q)
+                            if simbols in password and letters in password:
+                                break
                 else:
                     if la in 'Ss':
                         b = simbols + LETTERS
-                        q = int(input('Quantos dígitos a senha deve conter? '))
-                        if z > q:
-                            print('Impossível ter mais tipos de caracteres na senha do que tamanho')
-                            sleep(1)
-                            sys.exit()
-                        password=sample(b,q)
+                        while True:
+                            password=sample(b,q)
+                            if simbols in password and LETTERS in password:
+                                break
                     else:
-                        b = simbols
-                        q = int(input('Quantos dígitos a senha deve conter? '))
-                        if z > q:
-                            print('Impossível ter mais tipos de caracteres na senha do que tamanho')
-                            sleep(1)
-                            sys.exit()
-                        password=sample(b,q) 
+                        b = simbols 
+                        while True:
+                            password=sample(b,q)
+                            if simbols in password:
+                                break 
             else:
                 if li in 'Ss':
                     if la in 'Ss':
                         b = letters + LETTERS
-                        q = int(input('Quantos dígitos a senha deve conter? '))
-                        if z > q:
-                            print('Impossível ter mais tipos de caracteres na senha do que tamanho')
-                            sleep(1)
-                            sys.exit()
-                        password=sample(b,q)
+                        while True:
+                            password=sample(b,q)
+                            if letters in password and LETTERS in password:
+                                break
                     else:
                         b = letters
-                        q = int(input('Quantos dígitos a senha deve conter? '))
-                        if z > q:
-                            print('Impossível ter mais tipos de caracteres na senha do que tamanho')
-                            sleep(1)
-                            sys.exit()
-                        password=sample(b,q)
+                        while True:
+                            password=sample(b,q)
+                            if letters in password:
+                                break
                 else:
                     if la in 'Ss':
                         b = LETTERS
-                        q = int(input('Quantos dígitos a senha deve conter? '))
-                        if z > q:
-                            print('Impossível ter mais tipos de caracteres na senha do que tamanho')
-                            sleep(1)
-                            sys.exit()
-                        password=sample(b,q)
+                        while True:
+                            password=sample(b,q)
+                            if LETTERS in password:
+                                break
                     else:
                         print('Por favor, não foda e meta o pé')
                         sleep(2)
@@ -219,7 +198,7 @@ while True:
 
         sleep(0.5)
         senha=''.join(password)
-        print('Nova Senha: {0}.'.format(senha))
+        print('Nova Senha: {0}'.format(senha))
         break
     
 sleep(1)
