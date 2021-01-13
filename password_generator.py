@@ -75,104 +75,89 @@ while True:
                     if la in 'Ss':
                         b = numbers + simbols + letters + LETTERS
                         
-                        
 
 
                     else:
                         b = numbers + simbols + letters
-                        while True:
-                            password=sample(b,q)
-                            if numbers in password and simbols in password and letters in password:
-                                break
+                        
+
+
                 else:
                     if la in 'Ss':
                         b = numbers + simbols + LETTERS
-                        while True:
-                            password=sample(b,q)
-                            if numbers in password and simbols in password and LETTERS in password:
-                                break
+                        
+
+
                     else:
                         b = numbers + simbols  
-                        while True:
-                            password=sample(b,q)
-                            if numbers in password and simbols in password:
-                                break
+                        
+
+
             else:
                 if li in 'Ss':
                     if la in 'Ss':
                         b = numbers + letters + LETTERS
-                        while True:
-                            password=sample(b,q)
-                            if numbers in password and letters in password and LETTERS in password:
-                                break
+                        
+
+
                     else:
                         b = numbers + letters
-                        while True:
-                            password=sample(b,q)
-                            if numbers in password and letters in password:
-                                break
+                        
+
+
                 else:
                     if la in 'Ss':
                         b = numbers + LETTERS
-                        while True:
-                            password=sample(b,q)
-                            if numbers in password and LETTERS in password:
-                                break
+                        
+
+
                     else:
                         b = numbers 
-                        while True:
-                            password=sample(b,q)
-                            if numbers in password:
-                                break
+                        
+
+
         else:
             if s in 'Ss':
                 if li in 'Ss':
                     if la in 'Ss':
                         b = simbols + letters + LETTERS
-                        while True:
-                            password=sample(b,q)
-                            if simbols in password and letters in password and LETTERS in password:
-                                break
+                        
+
+
                     else:
                         b = simbols + letters
-                        while True:
-                            password=sample(b,q)
-                            if simbols in password and letters in password:
-                                break
+                        
+
+
                 else:
                     if la in 'Ss':
                         b = simbols + LETTERS
-                        while True:
-                            password=sample(b,q)
-                            if simbols in password and LETTERS in password:
-                                break
+                        
+
+
                     else:
                         b = simbols 
-                        while True:
-                            password=sample(b,q)
-                            if simbols in password:
-                                break 
+
+
+
             else:
                 if li in 'Ss':
                     if la in 'Ss':
                         b = letters + LETTERS
-                        while True:
-                            password=sample(b,q)
-                            if letters in password and LETTERS in password:
-                                break
+                        
+
+                        
                     else:
                         b = letters
-                        while True:
-                            password=sample(b,q)
-                            if letters in password:
-                                break
+                        
+
+
                 else:
                     if la in 'Ss':
                         b = LETTERS
-                        while True:
-                            password=sample(b,q)
-                            if LETTERS in password:
-                                break
+                        
+
+
                     else:
                         print('Por favor, não foda e meta o pé')
                         sleep(2)
