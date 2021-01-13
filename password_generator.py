@@ -68,34 +68,16 @@ while True:
             z += 1
 
         #SE DESEJA CARACTERE REPETIDO
-        q = int(input('Quantos dígitos a senha deve conter? '))
-        while True:
-            if z > q:
-                print('Impossível ter mais tipos de caracteres na senha do que tamanho')
-                sleep(1)
-                while True:
-                    novamente = str(input('Deseja escolher novamente o tamanho de sua senha? [S/N] '))
-                    while novamente not in 'SsNn':
-                        print('Não entendi, digite novamente por favor!')
-                        sleep(0.5)
-                        novamente = str(input('Deseja escolher novamente o tamanho de sua senha? [S/N] '))
-                    if novamente in 'Nn':
-                        sys.exit()
-                    else:
-                        q = int(input('Quantos dígitos a senha deve conter? '))
-                        break            
-            else: 
-                break
-
+        q = int(input('Quantos dígitos a senha deve conter? '))       
         if n in 'Ss':
             if s in 'Ss':
                 if li in 'Ss':
                     if la in 'Ss':
                         b = numbers + simbols + letters + LETTERS
-                        while True:
-                            password=sample(b,q)
-                            if numbers in password and simbols in password and letters in password and LETTERS in password:
-                                break
+                        
+                        
+
+
                     else:
                         b = numbers + simbols + letters
                         while True:
@@ -142,7 +124,7 @@ while True:
                             password=sample(b,q)
                             if numbers in password:
                                 break
-        elif n in 'Nn':
+        else:
             if s in 'Ss':
                 if li in 'Ss':
                     if la in 'Ss':
