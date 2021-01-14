@@ -66,9 +66,8 @@ while True:
         sleep(0.5)
         if la in 'Ss':
             z += 1
-
-        #SE DESEJA CARACTERE REPETIDO
        
+
         while True:
             q = int(input('Quantos dígitos a senha deve conter? '))
             if q<z:
@@ -84,6 +83,7 @@ while True:
                         print('Dê uma resposta válida, por favor.')
             else:
                 break
+
         if n in 'Ss':
             if s in 'Ss':
                 if li in 'Ss':
@@ -107,9 +107,6 @@ while True:
                             if numberscheck!=0 and simbolscheck!=0 and letterscheck!=0 and LETTERScheck!=0:
                                 break
 
-                        
-
-
                     else:
                         b = numbers + simbols + letters
                         while True:
@@ -124,11 +121,8 @@ while True:
                             for e in range(0,len(letters)):
                                 if letters[e] in password:
                                     letterscheck+=1
-
                             if numberscheck!=0 and simbolscheck!=0 and letterscheck!=0:
                                 break
-                        
-
 
                 else:
                     if la in 'Ss':
@@ -148,8 +142,6 @@ while True:
                             if numberscheck!=0 and simbolscheck!=0 and LETTERScheck!=0:
                                 break
                         
-
-
                     else:
                         b = numbers + simbols  
                         while True:
@@ -165,8 +157,6 @@ while True:
                             if numberscheck!=0 and simbolscheck!=0:
                                 break
                         
-
-
             else:
                 if li in 'Ss':
                     if la in 'Ss':
@@ -186,8 +176,6 @@ while True:
                             if numberscheck!=0 and letterscheck!=0 and LETTERScheck!=0:
                                 break
                         
-
-
                     else:
                         b = numbers + letters
                         while True:
@@ -204,8 +192,6 @@ while True:
                             if numberscheck!=0 and letterscheck!=0:
                                 break
                         
-
-
                 else:
                     if la in 'Ss':
                         b = numbers + LETTERS
@@ -221,8 +207,6 @@ while True:
                             if numberscheck!=0 and LETTERScheck!=0:
                                 break
                         
-
-
                     else:
                         b = numbers 
                         while True:
@@ -235,8 +219,6 @@ while True:
                             if numberscheck!=0:
                                 break
                         
-
-
         else:
             if s in 'Ss':
                 if li in 'Ss':
@@ -245,21 +227,22 @@ while True:
                         while True:
                             numberscheck=simbolscheck=letterscheck=LETTERScheck=0
                             password=sample(b,q)
-
+                            
                             for d in range(0,len(simbols)):
                                 if simbols[d] in password:
                                     simbolscheck+=1
+
                             for e in range(0,len(letters)):
                                 if letters[e] in password:
                                     letterscheck+=1
+
                             for f in range(0,len(LETTERS)):
                                 if LETTERS[f] in password:
                                     LETTERScheck+=1
+
                             if simbolscheck!=0 and letterscheck!=0 and LETTERScheck!=0:
                                 break
                         
-
-
                     else:
                         b = simbols + letters
                         while True:
@@ -269,6 +252,7 @@ while True:
                             for d in range(0,len(simbols)):
                                 if simbols[d] in password:
                                     simbolscheck+=1
+
                             for e in range(0,len(letters)):
                                 if letters[e] in password:
                                     letterscheck+=1
@@ -276,8 +260,6 @@ while True:
                             if simbolscheck!=0 and letterscheck!=0:
                                 break
                         
-
-
                 else:
                     if la in 'Ss':
                         b = simbols + LETTERS
@@ -292,11 +274,10 @@ while True:
                             for f in range(0,len(LETTERS)):
                                 if LETTERS[f] in password:
                                     LETTERScheck+=1
+
                             if simbolscheck!=0 and LETTERScheck!=0:
                                 break
-                        
-
-
+                    
                     else:
                         b = simbols 
                         while True:
@@ -306,11 +287,8 @@ while True:
                             for d in range(0,len(simbols)):
                                 if simbols[d] in password:
                                     simbolscheck+=1
-
                             if simbolscheck!=0:
                                 break
-
-
 
             else:
                 if li in 'Ss':
@@ -329,8 +307,6 @@ while True:
                             if letterscheck!=0 and LETTERScheck!=0:
                                 break
                         
-
-                        
                     else:
                         b = letters
                         while True:
@@ -344,8 +320,6 @@ while True:
                             if letterscheck!=0:
                                 break
                         
-
-
                 else:
                     if la in 'Ss':
                         b = LETTERS
@@ -356,11 +330,10 @@ while True:
                             for f in range(0,len(LETTERS)):
                                 if LETTERS[f] in password:
                                     LETTERScheck+=1
+                        
                             if LETTERScheck!=0:
                                 break
                         
-
-
                     else:
                         print('Por favor, não foda e meta o pé')
                         sleep(2)
