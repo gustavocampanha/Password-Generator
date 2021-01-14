@@ -68,28 +68,102 @@ while True:
             z += 1
 
         #SE DESEJA CARACTERE REPETIDO
-        q = int(input('Quantos dígitos a senha deve conter? '))       
+       
+        while True:
+            q = int(input('Quantos dígitos a senha deve conter? '))
+            if q<z:
+                print('Impossível a quantidade de caracteres ser menor que a quantidade de grupos de caracteres.')
+                while True:
+                    resp=input('Gostaria de escolhar a quantidade de caracteres novamente?[S/N]')
+                    if resp in 'Nn':
+                        sys.exit()
+                    elif resp in 'Ss':
+                        print('Ok!')
+                        break
+                    else:
+                        print('Dê uma resposta válida, por favor.')
+            else:
+                break
         if n in 'Ss':
             if s in 'Ss':
                 if li in 'Ss':
                     if la in 'Ss':
                         b = numbers + simbols + letters + LETTERS
+                        while True:
+                            numberscheck=simbolscheck=letterscheck=LETTERScheck=0
+                            password=sample(b,q)
+                            for c in range(0,len(numbers)):
+                                if numbers[c] in password:
+                                    numberscheck+=1
+                            for d in range(0,len(simbols)):
+                                if simbols[d] in password:
+                                    simbolscheck+=1
+                            for e in range(0,len(letters)):
+                                if letters[e] in password:
+                                    letterscheck+=1
+                            for f in range(0,len(LETTERS)):
+                                if LETTERS[f] in password:
+                                    LETTERScheck+=1
+                            if numberscheck!=0 and simbolscheck!=0 and letterscheck!=0 and LETTERScheck!=0:
+                                break
+
                         
 
 
                     else:
                         b = numbers + simbols + letters
+                        while True:
+                            numberscheck=simbolscheck=letterscheck=LETTERScheck=0
+                            password=sample(b,q)
+                            for c in range(0,len(numbers)):
+                                if numbers[c] in password:
+                                    numberscheck+=1
+                            for d in range(0,len(simbols)):
+                                if simbols[d] in password:
+                                    simbolscheck+=1
+                            for e in range(0,len(letters)):
+                                if letters[e] in password:
+                                    letterscheck+=1
+
+                            if numberscheck!=0 and simbolscheck!=0 and letterscheck!=0:
+                                break
                         
 
 
                 else:
                     if la in 'Ss':
                         b = numbers + simbols + LETTERS
+                        while True:
+                            numberscheck=simbolscheck=letterscheck=LETTERScheck=0
+                            password=sample(b,q)
+                            for c in range(0,len(numbers)):
+                                if numbers[c] in password:
+                                    numberscheck+=1
+                            for d in range(0,len(simbols)):
+                                if simbols[d] in password:
+                                    simbolscheck+=1
+                            for f in range(0,len(LETTERS)):
+                                if LETTERS[f] in password:
+                                    LETTERScheck+=1
+                            if numberscheck!=0 and simbolscheck!=0 and LETTERScheck!=0:
+                                break
                         
 
 
                     else:
                         b = numbers + simbols  
+                        while True:
+                            numberscheck=simbolscheck=letterscheck=LETTERScheck=0
+                            password=sample(b,q)
+                            for c in range(0,len(numbers)):
+                                if numbers[c] in password:
+                                    numberscheck+=1
+                            for d in range(0,len(simbols)):
+                                if simbols[d] in password:
+                                    simbolscheck+=1
+
+                            if numberscheck!=0 and simbolscheck!=0:
+                                break
                         
 
 
@@ -97,22 +171,69 @@ while True:
                 if li in 'Ss':
                     if la in 'Ss':
                         b = numbers + letters + LETTERS
+                        while True:
+                            numberscheck=simbolscheck=letterscheck=LETTERScheck=0
+                            password=sample(b,q)
+                            for c in range(0,len(numbers)):
+                                if numbers[c] in password:
+                                    numberscheck+=1
+                            for e in range(0,len(letters)):
+                                if letters[e] in password:
+                                    letterscheck+=1
+                            for f in range(0,len(LETTERS)):
+                                if LETTERS[f] in password:
+                                    LETTERScheck+=1
+                            if numberscheck!=0 and letterscheck!=0 and LETTERScheck!=0:
+                                break
                         
 
 
                     else:
                         b = numbers + letters
+                        while True:
+                            numberscheck=simbolscheck=letterscheck=LETTERScheck=0
+                            password=sample(b,q)
+                            for c in range(0,len(numbers)):
+                                if numbers[c] in password:
+                                    numberscheck+=1
+
+                            for e in range(0,len(letters)):
+                                if letters[e] in password:
+                                    letterscheck+=1
+
+                            if numberscheck!=0 and letterscheck!=0:
+                                break
                         
 
 
                 else:
                     if la in 'Ss':
                         b = numbers + LETTERS
+                        while True:
+                            numberscheck=simbolscheck=letterscheck=LETTERScheck=0
+                            password=sample(b,q)
+                            for c in range(0,len(numbers)):
+                                if numbers[c] in password:
+                                    numberscheck+=1
+                            for f in range(0,len(LETTERS)):
+                                if LETTERS[f] in password:
+                                    LETTERScheck+=1
+                            if numberscheck!=0 and LETTERScheck!=0:
+                                break
                         
 
 
                     else:
                         b = numbers 
+                        while True:
+                            numberscheck=simbolscheck=letterscheck=LETTERScheck=0
+                            password=sample(b,q)
+                            for c in range(0,len(numbers)):
+                                if numbers[c] in password:
+                                    numberscheck+=1
+
+                            if numberscheck!=0:
+                                break
                         
 
 
@@ -121,22 +242,73 @@ while True:
                 if li in 'Ss':
                     if la in 'Ss':
                         b = simbols + letters + LETTERS
+                        while True:
+                            numberscheck=simbolscheck=letterscheck=LETTERScheck=0
+                            password=sample(b,q)
+
+                            for d in range(0,len(simbols)):
+                                if simbols[d] in password:
+                                    simbolscheck+=1
+                            for e in range(0,len(letters)):
+                                if letters[e] in password:
+                                    letterscheck+=1
+                            for f in range(0,len(LETTERS)):
+                                if LETTERS[f] in password:
+                                    LETTERScheck+=1
+                            if simbolscheck!=0 and letterscheck!=0 and LETTERScheck!=0:
+                                break
                         
 
 
                     else:
                         b = simbols + letters
+                        while True:
+                            numberscheck=simbolscheck=letterscheck=LETTERScheck=0
+                            password=sample(b,q)
+
+                            for d in range(0,len(simbols)):
+                                if simbols[d] in password:
+                                    simbolscheck+=1
+                            for e in range(0,len(letters)):
+                                if letters[e] in password:
+                                    letterscheck+=1
+
+                            if simbolscheck!=0 and letterscheck!=0:
+                                break
                         
 
 
                 else:
                     if la in 'Ss':
                         b = simbols + LETTERS
+                        while True:
+                            numberscheck=simbolscheck=letterscheck=LETTERScheck=0
+                            password=sample(b,q)
+
+                            for d in range(0,len(simbols)):
+                                if simbols[d] in password:
+                                    simbolscheck+=1
+
+                            for f in range(0,len(LETTERS)):
+                                if LETTERS[f] in password:
+                                    LETTERScheck+=1
+                            if simbolscheck!=0 and LETTERScheck!=0:
+                                break
                         
 
 
                     else:
                         b = simbols 
+                        while True:
+                            numberscheck=simbolscheck=letterscheck=LETTERScheck=0
+                            password=sample(b,q)
+
+                            for d in range(0,len(simbols)):
+                                if simbols[d] in password:
+                                    simbolscheck+=1
+
+                            if simbolscheck!=0:
+                                break
 
 
 
@@ -144,17 +316,48 @@ while True:
                 if li in 'Ss':
                     if la in 'Ss':
                         b = letters + LETTERS
+                        while True:
+                            numberscheck=simbolscheck=letterscheck=LETTERScheck=0
+                            password=sample(b,q)
+
+                            for e in range(0,len(letters)):
+                                if letters[e] in password:
+                                    letterscheck+=1
+                            for f in range(0,len(LETTERS)):
+                                if LETTERS[f] in password:
+                                    LETTERScheck+=1
+                            if letterscheck!=0 and LETTERScheck!=0:
+                                break
                         
 
                         
                     else:
                         b = letters
+                        while True:
+                            numberscheck=simbolscheck=letterscheck=LETTERScheck=0
+                            password=sample(b,q)
+ 
+                            for e in range(0,len(letters)):
+                                if letters[e] in password:
+                                    letterscheck+=1
+
+                            if letterscheck!=0:
+                                break
                         
 
 
                 else:
                     if la in 'Ss':
                         b = LETTERS
+                        while True:
+                            numberscheck=simbolscheck=letterscheck=LETTERScheck=0
+                            password=sample(b,q)
+
+                            for f in range(0,len(LETTERS)):
+                                if LETTERS[f] in password:
+                                    LETTERScheck+=1
+                            if LETTERScheck!=0:
+                                break
                         
 
 
